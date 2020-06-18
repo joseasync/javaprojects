@@ -1,0 +1,7 @@
+swagger2 - gera o swagger doc
+
+spring fox data rest - work with spring data rest
+
+springfox swagger ui - UI
+
+repository do snapshot - buscar depois...
