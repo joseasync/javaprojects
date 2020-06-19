@@ -2,6 +2,7 @@ package com.josecruzio.conference.controller;
 
 import com.josecruzio.conference.model.Registration;
 import com.josecruzio.conference.model.User;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,7 @@ public class UserController {
         return user;
     }
 
+    @ApiOperation(value="Post User anotacao para o Swagger", notes ="anotacao dentro da documentacao")
     @PostMapping("/user")
     public User postUser(User user){
         System.out.println("User first name" + user.getFirstName());

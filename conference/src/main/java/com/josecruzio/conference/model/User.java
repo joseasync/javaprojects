@@ -1,6 +1,9 @@
 package com.josecruzio.conference.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class User {
+    @ApiModelProperty("Primeiro Nome")
     private String firstName;
     private String lastName;
     private int age;
