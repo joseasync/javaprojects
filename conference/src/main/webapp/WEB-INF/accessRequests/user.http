@@ -1,0 +1,14 @@
+GET http://localhost:8080/conference/v1/user?age=24&firstname=Jose&lastname=Cruz
+Accept: application/json
+
+###Cadastro
+POST http://localhost:8080/conference/v1/user
+Content-Type: application/json
+
+{
+  "age": 22,
+  "firstName": "Jose",
+  "lastName": "Cruz"
+}
+
+###

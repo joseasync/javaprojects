@@ -3,9 +3,11 @@ package com.josecruzio.conference.controller;
 import com.josecruzio.conference.model.Registration;
 import com.josecruzio.conference.model.User;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@BasePathAwareController
 public class UserController {
 
     @GetMapping("/user")
