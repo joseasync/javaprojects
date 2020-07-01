@@ -1,0 +1,1 @@
+alter table articles add TITLE VARCHAR(1024) NOT NULL;

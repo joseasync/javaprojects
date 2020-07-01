@@ -38,4 +38,13 @@ public class FlightCrudTest {
 		//assertThat(flightRepository.count()).isZero();
 	}
 
+	private Flight createFlight(String origin) {
+
+		final Flight flight = new Flight();
+		flight.setOrigin(origin);
+		flight.setDestination("Madrid");
+		flight.setSheduleAt(LocalDateTime.parse("2011-12-13T12:12:00"));
+		return flight;
+	}
+
 }

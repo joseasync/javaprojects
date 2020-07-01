@@ -2,10 +2,16 @@ package com.josecruzio.springdatarefact.Repository;
 
 import com.josecruzio.springdatarefact.Models.Flight;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public interface FlightRepository extends CrudRepository<Flight, Long> {
+@Repository
+@Transactional
+public interface FlightRepository extends CrudRepository<Flight, Long> { //Oldone
+//public interface FlightRepository extends PagingAndSortingRepository<Flight, Long> {
 
     List<Flight> findByOrigin(String origin);
 

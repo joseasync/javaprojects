@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -13,20 +14,28 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace.NONE;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
+@DataJpaTest //faz o request de um DB embedded
+@AutoConfigureTestDatabase(replace = NONE)
 public class DerivedQueryTests {
     @Autowired
     private FlightRepository flightRepository;
 
     @Before
     public void setUp(){
-        flightRepository.deleteAll();
+        //flightRepository.deleteAll();
     }
 
     @Test
     public void shouldFindFlightsFromLondon(){
+
+        List<Flight> xpto = flightRepository.findByOrigin("Brasilia");
+
+
+
+
         final Flight flight1 = createFlight("London");
         final Flight flight2 = createFlight("London");
         final Flight flight3 = createFlight("New York");
